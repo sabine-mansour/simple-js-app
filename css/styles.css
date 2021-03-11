@@ -10,3 +10,18 @@ body {
 header {
   padding: 10px 0px 20px 0px;
 }
+
+.pokemon-list {
+  list-style: none;
+}
+
+.button-class {
+  font-family: 'Press Start 2P', monospace;
+  border: none;
+  padding: 16px 32px;
+  margin: 10px 0px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border: 2px solid black;
+}
