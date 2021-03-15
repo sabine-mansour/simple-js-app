@@ -31,6 +31,7 @@ let pokemonRepository = (function(){
     });
   }
 
+//function fetches list of pokemon from pokeapi
   function loadList() {
     return fetch(apiURL).then(function(response){
       return response.json();
@@ -47,6 +48,7 @@ let pokemonRepository = (function(){
     });
   }
 
+//function fetches details of pokemons from pokeapi
   function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url).then(function (response){
@@ -60,6 +62,7 @@ let pokemonRepository = (function(){
     });
   }
 
+//function log pokemon details to the console
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
       console.log(pokemon);
