@@ -11,8 +11,14 @@ header {
   padding: 10px 0px 20px 0px;
 }
 
+h1 {
+  display: inline-block;
+  font-size: 32px;
+}
+
 .pokemon-list {
   list-style: none;
+  text-align: center;
 }
 
 .button-class {
@@ -24,4 +30,50 @@ header {
   color: black;
   text-align: center;
   border: 2px solid black;
+}
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  display: block;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  background: rgba(255,0,0,0.2);
+  position: fixed;
+  top:0;
+  left:0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  background: #fff;
+  padding: 15px;
+  width: 500px;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.modal-close {
+  float: right;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: none;
+}
+
+.modal h2 {
+  margin-top: 0;
+  clear: both;
+}
+
+.modal p {
+  margin-bottom: 0;
 }
