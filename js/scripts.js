@@ -99,13 +99,18 @@ let pokemonRepository = (function(){
     });
   }
 
+  function hideModal() {
+  modalContainer.classList.remove('is-visible');
+}
+
   return {
     getAll: getAll,
     add: add,
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showDetails: showDetails
+    showDetails: showDetails,
+    hideModal: hideModal;
   };
 })();
 
