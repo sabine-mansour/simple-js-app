@@ -116,7 +116,7 @@ window.addEventListener('keydown', function(e) {
 
 modalContainer.addEventListener('click', function(e) {
   let target = e.target;
-  if (target = modalContainer) {
+  if (target === modalContainer) {
     hideModal()
   }
 });
