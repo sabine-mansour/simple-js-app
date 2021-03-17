@@ -8,12 +8,15 @@ body {
   padding-left: 10px;
 }
 header {
-  padding: 10px 0px 20px 0px;
+  padding: 10px 0 0 20px;
+  text-align: center;
 }
 
 h1 {
-  display: inline-block;
-  font-size: 32px;
+  font-size: 29px;
+  width: 200px;
+  padding-left: 10px;
+  margin: 20px auto;
 }
 
 .pokemon-list {
