@@ -1,7 +1,6 @@
 let pokemonRepository = (function(){
   let pokemonList = [];
   let apiURL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  let modalContainer = document.querySelector('#modal-container');
 
   function getAll() {
     return pokemonList;
@@ -28,6 +27,8 @@ let pokemonRepository = (function(){
     button.innerText = pokemon.name;
     button.classList.add("btn");
     button.classList.add("btn-block");
+    button.setAttribute('data-toggle','modal');
+    button.setAttribute('data-target', '#pokemonModal');
     listItem.appendChild(button);
     container.appendChild(listItem);
     button.addEventListener('click', function(event){
@@ -75,10 +76,21 @@ let pokemonRepository = (function(){
 function showDetails(pokemon) {
 
   loadDetails(pokemon).then(function () {
+    let modalBody = $('.modal-body');
+    let modalTitle = $('.modal-title');
+    let modalHeader = $('.modal-header');
 
-  modalContainer.innerHTML = '';
+    modalTitle.empty();
+    modalBody.empty();
 
+    let pokemonName = $("<h1>" + pokemon.name + "</h1>");
+    let pokemonImage = $('<img class="modal-img" style="width:50%">');
+    pokemonImage.attr("src", pokemon.imageUrl);
+    let pokemonHeight = $("<p>" + "Height: " + pokemon.height + "</p>");
 
+    modalTitle.append(pokemonName);
+    modalBody.append(pokemonImage);
+    modalBody.append(pokemonHeight);
 
   });
 }
