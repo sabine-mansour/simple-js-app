@@ -9,30 +9,28 @@ let pokemonRepository = (function(){
 
   function add(item) {
     if (
-      typeof item === "object" &&
-      "name" in item &&
-      "detailsUrl" in item
+      typeof item === 'object' &&
+      'name' in item &&
+      'detailsUrl' in item
     ) {
         pokemonList.push(item);
-      } else {
-        console.log("pokemon is not correct");
       }
   }
 
   function addListItem(pokemon) {
-    let container = document.querySelector(".list-group");
-    let listItem = document.createElement("li");
-    listItem.classList.add("list-group-item");
-    listItem.classList.add("list-group-item-action");
-    let button = document.createElement("button");
+    let container = document.querySelector('.list-group');
+    let listItem = document.createElement('li');
+    listItem.classList.add('list-group-item');
+    listItem.classList.add('list-group-item-action');
+    let button = document.createElement('button');
     button.innerText = pokemon.name;
-    button.classList.add("btn");
-    button.classList.add("btn-block");
-    button.setAttribute("data-target", "#pokemonModal");
-    button.setAttribute("data-toggle", "modal");
+    button.classList.add('btn');
+    button.classList.add('btn-block');
+    button.setAttribute('data-target', '#pokemonModal');
+    button.setAttribute('data-toggle', 'modal');
     listItem.appendChild(button);
     container.appendChild(listItem);
-    button.addEventListener('click', function(event){
+    button.addEventListener('click', function(){
       showDetails(pokemon);
     });
   }
@@ -79,10 +77,10 @@ function showDetails(pokemon) {
     modalTitle.empty();
     modalBody.empty();
 
-    let pokemonName = $("<h1>" + pokemon.name + "</h1>");
+    let pokemonName = $('<h1>' + pokemon.name + '</h1>');
     let pokemonImage = $('<img class="modal-img" style="width:50%">');
-    pokemonImage.attr("src", pokemon.imageUrl);
-    let pokemonHeight = $("<p>" + "Height: " + pokemon.height + "</p>");
+    pokemonImage.attr('src', pokemon.imageUrl);
+    let pokemonHeight = $('<p>' + 'Height: ' + pokemon.height + '</p>');
 
     modalTitle.append(pokemonName);
     modalBody.append(pokemonImage);
